@@ -14,13 +14,12 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "npm run compile && npm run generate:sites",
+    "build": "echo 'API-only deployment — no build step'",
     "compile": "tsc",
     "generate:sites": "node scripts/generate-sites.js",
     "dev": "tsc && node dist/index.js",
     "test": "node --test dist/**/*.test.js",
     "serve:local": "npx http-server public/",
-    "deploy:vercel": "npm run build && vercel --prod",
     "publish:npm": "npm run build && npm publish",
     "install:claude": "node scripts/install-claude-desktop.js"
   },
@@ -37,11 +36,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR-USERNAME/datarelief-mcp.git"
+    "url": "https://github.com/leobyday/datarelief.git"
   },
   "homepage": "https://datarelief.org",
   "bugs": {
-    "url": "https://github.com/YOUR-USERNAME/datarelief-mcp/issues"
+    "url": "https://github.com/leobyday/datarelief/issues"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^0.7.0",

@@ -1,0 +1,127 @@
+[
+  {
+    "id": "sudan-2024",
+    "name": "Sudan Humanitarian Crisis",
+    "country": "Sudan",
+    "slug": "sudan-2024",
+    "peopleAffected": 25000000,
+    "fundingGapUSD": 2800000000,
+    "fundingReceivedUSD": 900000000,
+    "urgencyScore": 95,
+    "lastUpdated": "2024-11-01",
+    "criticalNeeds": ["Food", "Water", "Medical supplies", "Shelter"],
+    "organizations": [
+      {
+        "slug": "save-the-children",
+        "name": "Save the Children",
+        "donationUrl": "https://www.savethechildren.org/us/what-we-do/emergency-response/sudan-crisis"
+      },
+      {
+        "slug": "doctors-without-borders",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate"
+      },
+      {
+        "slug": "care",
+        "name": "CARE International",
+        "donationUrl": "https://www.care.org/our-work/disaster-response/emergencies/sudan-crisis/"
+      }
+    ]
+  },
+  {
+    "id": "gaza-2024",
+    "name": "Gaza Humanitarian Crisis",
+    "country": "Palestine",
+    "slug": "gaza-2024",
+    "peopleAffected": 2200000,
+    "fundingGapUSD": 3500000000,
+    "fundingReceivedUSD": 1200000000,
+    "urgencyScore": 98,
+    "lastUpdated": "2024-11-01",
+    "criticalNeeds": ["Medical supplies", "Food", "Water", "Fuel"],
+    "organizations": [
+      {
+        "slug": "unrwa",
+        "name": "UNRWA",
+        "donationUrl": "https://donate.unrwa.org/"
+      },
+      {
+        "slug": "medical-aid-for-palestinians",
+        "name": "Medical Aid for Palestinians",
+        "donationUrl": "https://www.map.org.uk/donate/"
+      }
+    ]
+  },
+  {
+    "id": "afghanistan-2024",
+    "name": "Afghanistan Humanitarian Crisis",
+    "country": "Afghanistan",
+    "slug": "afghanistan-2024",
+    "peopleAffected": 23700000,
+    "fundingGapUSD": 2100000000,
+    "fundingReceivedUSD": 600000000,
+    "urgencyScore": 88,
+    "lastUpdated": "2024-10-15",
+    "criticalNeeds": ["Food", "Healthcare", "Winter supplies", "Education"],
+    "organizations": [
+      {
+        "slug": "world-food-programme",
+        "name": "World Food Programme",
+        "donationUrl": "https://www.wfp.org/donate"
+      },
+      {
+        "slug": "save-the-children",
+        "name": "Save the Children",
+        "donationUrl": "https://www.savethechildren.org/us/what-we-do/emergency-response/afghanistan"
+      }
+    ]
+  },
+  {
+    "id": "venezuela-2024",
+    "name": "Venezuela Displacement Crisis",
+    "country": "Venezuela",
+    "slug": "venezuela-2024",
+    "peopleAffected": 7700000,
+    "fundingGapUSD": 1600000000,
+    "fundingReceivedUSD": 280000000,
+    "urgencyScore": 82,
+    "lastUpdated": "2024-09-20",
+    "criticalNeeds": ["Food", "Medicine", "Shelter", "Cash assistance"],
+    "organizations": [
+      {
+        "slug": "unhcr",
+        "name": "UNHCR",
+        "donationUrl": "https://www.unhcr.org/donate/venezuela-emergency/"
+      },
+      {
+        "slug": "mercy-corps",
+        "name": "Mercy Corps",
+        "donationUrl": "https://www.mercycorps.org/who-we-help/venezuela"
+      }
+    ]
+  },
+  {
+    "id": "ethiopia-2024",
+    "name": "Ethiopia Drought & Conflict",
+    "country": "Ethiopia",
+    "slug": "ethiopia-2024",
+    "peopleAffected": 20400000,
+    "fundingGapUSD": 1900000000,
+    "fundingReceivedUSD": 320000000,
+    "urgencyScore": 90,
+    "lastUpdated": "2024-10-01",
+    "criticalNeeds": ["Food", "Water", "Medical supplies"],
+    "organizations": [
+      {
+        "slug": "oxfam",
+        "name": "Oxfam",
+        "donationUrl": "https://www.oxfam.org/en/take-action/donate"
+      },
+      {
+        "slug": "world-food-programme",
+        "name": "World Food Programme",
+        "donationUrl": "https://www.wfp.org/donate"
+      }
+    ]
+  }
+]
