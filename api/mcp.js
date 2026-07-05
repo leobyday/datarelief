@@ -21,32 +21,72 @@ function isStale(lastUpdated) {
   return days > 30;
 }
 
-function staleWarning(crisis) {
-  return isStale(crisis.lastUpdated)
-    ? `\n> ⚠️ Data last updated ${crisis.lastUpdated}. Figures may have changed.\n`
-    : '';
-}
-
 function redirectUrl(crisisSlug, orgSlug) {
   return `${BASE_URL}/api/go/${crisisSlug}/${orgSlug}`;
 }
 
-function formatCrisis(crisis, rank) {
-  const gap = fundingGapPct(crisis);
+// ─── ASCII visualization helpers ─────────────────────────────────────────────
+
+const FULL = '█';
+const EMPTY = '░';
+const BAR_WIDTH = 20;
+
+function bar(value, max, width = BAR_WIDTH) {
+  const filled = Math.round((value / max) * width);
+  return FULL.repeat(filled) + EMPTY.repeat(width - filled);
+}
+
+function urgencyBar(score) {
+  return `${bar(score, 100)} ${score}/100`;
+}
+
+function fundingBar(crisis) {
+  const total = crisis.fundingGapUSD + crisis.fundingReceivedUSD;
+  const fundedPct = total > 0 ? Math.round((crisis.fundingReceivedUSD / total) * 100) : 0;
+  const gapPct = 100 - fundedPct;
+  return `Funded  ${bar(fundedPct, 100)} ${fundedPct}%\nGap     ${bar(gapPct, 100)} ${gapPct}%`;
+}
+
+function needsBar(crisis) {
+  // Each need gets equal weight across the bar — shows breadth of crisis
+  const needs = crisis.criticalNeeds;
+  const perNeed = Math.floor(BAR_WIDTH / needs.length);
+  return needs.map(n => `${FULL.repeat(perNeed)} ${n}`).join('  ');
+}
+
+function formatCrisisCard(crisis, rank) {
   const gapM = Math.round(crisis.fundingGapUSD / 1_000_000);
   const affected = crisis.peopleAffected.toLocaleString();
-  const prefix = rank != null ? `**${rank}. ${crisis.name}**` : `**${crisis.name}**`;
+  const stale = isStale(crisis.lastUpdated) ? `⚠️  Data as of ${crisis.lastUpdated}\n` : `Updated ${crisis.lastUpdated}\n`;
+  const rankPrefix = rank != null ? `${rank}. ` : '';
+  const orgLinks = crisis.organizations.map(o => `[${o.name} →](${redirectUrl(crisis.slug, o.slug)})`).join(' · ');
 
-  const orgLinks = crisis.organizations
-    .map(o => `[${o.name} →](${redirectUrl(crisis.slug, o.slug)})`)
-    .join(' · ');
+  return `**${rankPrefix}${crisis.name}** — ${crisis.country}
+${stale}
+Urgency  ${urgencyBar(crisis.urgencyScore)}
+${fundingBar(crisis)}
 
-  return `${prefix} — ${crisis.country}
-${staleWarning(crisis)}- People affected: ${affected} (as of ${crisis.lastUpdated})
-- Funding gap: $${gapM}M · ${gap}% underfunded
-- Urgency score: ${crisis.urgencyScore}/100
-- Critical needs: ${crisis.criticalNeeds.join(', ')}
-- Donate: ${orgLinks}`;
+People affected: ${affected}
+Funding gap:     $${gapM}M
+Areas of need:   ${needsBar(crisis)}
+
+Donate: ${orgLinks}`;
+}
+
+function formatRankingChart(crises) {
+  const maxScore = 100;
+  const lines = crises.map((c, i) => {
+    const name = c.name.replace(/ Humanitarian| Crisis| Earthquake| Displacement/, '').padEnd(20);
+    return `${String(i + 1).padStart(2)}. ${name} ${bar(c.urgencyScore, maxScore)} ${c.urgencyScore}`;
+  });
+
+  return `\`\`\`
+   ${'URGENCY RANKING'.padStart(20 + BAR_WIDTH / 2 + 4)}
+${'─'.repeat(52)}
+${lines.join('\n')}
+${'─'.repeat(52)}
+   0%                   50%               100%
+\`\`\``;
 }
 
 function logQuery(query, crisesReturned) {
@@ -59,6 +99,8 @@ function logQuery(query, crisesReturned) {
   }));
 }
 
+// ─── MCP Server ───────────────────────────────────────────────────────────────
+
 function createMcpServer() {
   const server = new Server(
     { name: 'datarelief', version: '1.0.0' },
@@ -69,49 +111,45 @@ function createMcpServer() {
     tools: [
       {
         name: 'list_crises',
-        description: 'List all active global crises ranked by urgency and funding gap. Use for "who needs help?", "where should I donate?", "what crises are happening?"',
+        description: 'List active global crises ranked by urgency with visual charts. Use for "who needs help?", "where should I donate?", "what crises are happening?"',
         inputSchema: {
           type: 'object',
           properties: {
-            limit: { type: 'number', description: 'Max crises to return (default: all)' },
+            limit: { type: 'number', description: 'Max crises to return (default: 7)' },
           },
         },
       },
       {
         name: 'get_crisis',
-        description: 'Get detailed info about a specific crisis by its slug (e.g. "sudan-2024")',
+        description: 'Get detailed info about a specific crisis. Use the slug from list_crises (e.g. "sudan-2024")',
         inputSchema: {
           type: 'object',
           required: ['slug'],
           properties: {
-            slug: { type: 'string', description: 'Crisis slug, e.g. "sudan-2024"' },
+            slug: { type: 'string' },
           },
         },
       },
       {
         name: 'compare_crises',
-        description: 'Compare two or more crises side by side — funding gaps, urgency, people affected',
+        description: 'Compare crises side by side with visual urgency bars',
         inputSchema: {
           type: 'object',
           required: ['slugs'],
           properties: {
-            slugs: {
-              type: 'array',
-              items: { type: 'string' },
-              description: 'Crisis slugs to compare, e.g. ["sudan-2024", "gaza-2024"]',
-            },
+            slugs: { type: 'array', items: { type: 'string' }, description: 'e.g. ["sudan-2024","gaza-2024"]' },
           },
         },
       },
       {
         name: 'filter_crises',
-        description: 'Filter crises by country, need type, or minimum urgency score',
+        description: 'Filter crises by country, need type (e.g. "food", "medical"), or minimum urgency score',
         inputSchema: {
           type: 'object',
           properties: {
-            country: { type: 'string', description: 'Filter by country name' },
-            need: { type: 'string', description: 'Need type, e.g. "medical" or "food"' },
-            minUrgency: { type: 'number', description: 'Minimum urgency score 0-100' },
+            country:    { type: 'string' },
+            need:       { type: 'string' },
+            minUrgency: { type: 'number' },
           },
         },
       },
@@ -123,42 +161,61 @@ function createMcpServer() {
     const crises = loadCrises();
 
     if (name === 'list_crises') {
-      const limit = args?.limit || crises.length;
+      const limit = args?.limit || 7;
       const ranked = [...crises].sort((a, b) => b.urgencyScore - a.urgencyScore).slice(0, limit);
       logQuery('list_crises', ranked.map(c => c.slug));
-      const body = ranked.map((c, i) => formatCrisis(c, i + 1)).join('\n\n---\n\n');
+
+      const chart = formatRankingChart(ranked);
+      const cards = ranked.map((c, i) => formatCrisisCard(c, i + 1)).join('\n\n---\n\n');
+
       return {
-        content: [{ type: 'text', text: `## Active Global Crises — Ranked by Urgency\n\n${body}\n\n---\n*Data sourced by DataRelief. Click any donate link to contribute.*` }],
+        content: [{
+          type: 'text',
+          text: `## 🌍 Active Global Crises\n\n${chart}\n\n---\n\n${cards}\n\n---\n*DataRelief — the data layer for humanitarian relief*`,
+        }],
       };
     }
 
     if (name === 'get_crisis') {
       const crisis = crises.find(c => c.slug === args?.slug || c.id === args?.slug);
-      if (!crisis) return { content: [{ type: 'text', text: `No crisis found with slug "${args?.slug}". Try list_crises to see available crises.` }], isError: true };
+      if (!crisis) return {
+        content: [{ type: 'text', text: `No crisis found with slug "${args?.slug}". Try list_crises to see available crises.` }],
+        isError: true,
+      };
       logQuery(`get_crisis:${args.slug}`, [crisis.slug]);
-      return { content: [{ type: 'text', text: formatCrisis(crisis) }] };
+      return { content: [{ type: 'text', text: formatCrisisCard(crisis) }] };
     }
 
     if (name === 'compare_crises') {
       const found = (args?.slugs || []).map(s => crises.find(c => c.slug === s || c.id === s)).filter(Boolean);
-      if (!found.length) return { content: [{ type: 'text', text: 'No matching crises found. Try list_crises to see available slugs.' }], isError: true };
+      if (!found.length) return {
+        content: [{ type: 'text', text: 'No matching crises found. Try list_crises to see available slugs.' }],
+        isError: true,
+      };
       logQuery(`compare:${args.slugs.join(',')}`, found.map(c => c.slug));
-      const header = '| Crisis | Country | Urgency | Funding Gap | People Affected | Last Updated |\n|---|---|---|---|---|---|';
-      const rows = found.map(c => `| **${c.name}** | ${c.country} | ${c.urgencyScore}/100 | $${Math.round(c.fundingGapUSD / 1_000_000)}M (${fundingGapPct(c)}%) | ${c.peopleAffected.toLocaleString()} | ${c.lastUpdated} |`);
-      const details = found.map(c => formatCrisis(c)).join('\n\n---\n\n');
-      return { content: [{ type: 'text', text: `## Crisis Comparison\n\n${header}\n${rows.join('\n')}\n\n---\n\n${details}` }] };
+
+      const chart = formatRankingChart(found);
+      const cards = found.map(c => formatCrisisCard(c)).join('\n\n---\n\n');
+      return {
+        content: [{ type: 'text', text: `## Crisis Comparison\n\n${chart}\n\n---\n\n${cards}` }],
+      };
     }
 
     if (name === 'filter_crises') {
       let filtered = [...crises];
-      if (args?.country) filtered = filtered.filter(c => c.country.toLowerCase().includes(args.country.toLowerCase()));
-      if (args?.need) filtered = filtered.filter(c => c.criticalNeeds.some(n => n.toLowerCase().includes(args.need.toLowerCase())));
+      if (args?.country)    filtered = filtered.filter(c => c.country.toLowerCase().includes(args.country.toLowerCase()));
+      if (args?.need)       filtered = filtered.filter(c => c.criticalNeeds.some(n => n.toLowerCase().includes(args.need.toLowerCase())));
       if (args?.minUrgency) filtered = filtered.filter(c => c.urgencyScore >= args.minUrgency);
       filtered.sort((a, b) => b.urgencyScore - a.urgencyScore);
       logQuery(`filter:${JSON.stringify(args)}`, filtered.map(c => c.slug));
-      if (!filtered.length) return { content: [{ type: 'text', text: 'No crises match your filter. Try list_crises to see all active crises.' }] };
-      const body = filtered.map((c, i) => formatCrisis(c, i + 1)).join('\n\n---\n\n');
-      return { content: [{ type: 'text', text: `## Filtered Crises\n\n${body}` }] };
+
+      if (!filtered.length) return {
+        content: [{ type: 'text', text: 'No crises match your filter. Try list_crises to see all active crises.' }],
+      };
+
+      const chart = formatRankingChart(filtered);
+      const cards = filtered.map((c, i) => formatCrisisCard(c, i + 1)).join('\n\n---\n\n');
+      return { content: [{ type: 'text', text: `## Filtered Crises\n\n${chart}\n\n---\n\n${cards}` }] };
     }
 
     return { content: [{ type: 'text', text: `Unknown tool: ${name}` }], isError: true };
