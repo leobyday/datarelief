@@ -3,34 +3,171 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DataRelief</title>
+  <title>DataRelief — The Data Layer for Humanitarian Relief</title>
+  <meta name="description" content="DataRelief systematically identifies where help is needed most and connects donors to the highest-impact humanitarian opportunities.">
+  <meta property="og:title" content="DataRelief">
+  <meta property="og:description" content="We're the data layer for humanitarian relief.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://datarelief.org">
   <style>
-    body {
+    *, *::before, *::after {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #f3f4f6;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── Hero ──────────────────────────────────────────────────── */
+
+    .hero {
+      flex: 1;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      color: #1f2937;
+      overflow: hidden;
+
+      /*
+        HERO IMAGE — replace this gradient once the image is ready.
+        Drop the generated image into public/assets/hero.jpg and
+        uncomment the background-image line below.
+      */
+      background:
+        /* background-image: url('/assets/hero.jpg'), */
+        linear-gradient(
+          175deg,
+          #0d1b2a 0%,
+          #0f2744 12%,
+          #0a5ea8 32%,
+          #1a85d4 44%,
+          #f9c464 58%,
+          #e8925c 66%,
+          #5a8a6a 76%,
+          #2d5240 88%,
+          #1a3028 100%
+        );
+      background-size: cover;
+      background-position: center;
     }
-    .card {
-      background: white;
-      padding: 48px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.10) 0%,
+        rgba(0,0,0,0.25) 40%,
+        rgba(0,0,0,0.55) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
       text-align: center;
-      max-width: 480px;
+      color: white;
+      padding: 0 24px;
+      animation: fadeUp 1.2s ease forwards;
+      opacity: 0;
     }
-    h1 { margin: 0 0 12px; font-size: 1.75rem; }
-    p { margin: 0; color: #6b7280; line-height: 1.6; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-content h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 300;
+      opacity: 0.85;
+      letter-spacing: 0.01em;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ─── Footer ────────────────────────────────────────────────── */
+
+    footer {
+      background: #0d1b2a;
+      color: rgba(255,255,255,0.45);
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+
+    .footer-brand {
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.02em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .footer-links a:hover {
+      color: rgba(255,255,255,0.85);
+    }
+
+    @media (max-width: 480px) {
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+      }
+      .footer-links {
+        gap: 20px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>DataRelief</h1>
-    <p>Real-time global crisis coordination.<br>Website coming soon.</p>
-  </div>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Data Relief</h1>
+      <p>We're the data layer for humanitarian relief</p>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-brand">DataRelief</span>
+    <nav class="footer-links">
+      <a href="/terms.html">Terms of Service</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/contact.html">Contact Us</a>
+    </nav>
+  </footer>
+
 </body>
 </html>

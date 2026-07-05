@@ -43,8 +43,7 @@
     "url": "https://github.com/leobyday/datarelief/issues"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^0.7.0",
-    "axios": "^1.6.0"
+    "@modelcontextprotocol/sdk": "^1.29.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
