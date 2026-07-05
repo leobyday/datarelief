@@ -73,19 +73,30 @@ Areas of need:   ${needsBar(crisis)}
 Donate: ${orgLinks}`;
 }
 
+function shortName(crisis) {
+  return crisis.name
+    .replace(' Humanitarian Crisis', '')
+    .replace(' Humanitarian', '')
+    .replace(' Displacement Crisis', '')
+    .replace(' Drought & Conflict', '')
+    .replace(' Crisis', '')
+    .slice(0, 24);
+}
+
 function formatRankingChart(crises) {
-  const maxScore = 100;
+  const maxLen = Math.max(...crises.map(c => shortName(c).length));
+
   const lines = crises.map((c, i) => {
-    const name = c.name.replace(/ Humanitarian| Crisis| Earthquake| Displacement/, '').padEnd(20);
-    return `${String(i + 1).padStart(2)}. ${name} ${bar(c.urgencyScore, maxScore)} ${c.urgencyScore}`;
+    const rank = `${i + 1}.`.padEnd(3);
+    const name = shortName(c).padEnd(maxLen);
+    return `${rank} ${name}  ${bar(c.urgencyScore, 100)}  ${c.urgencyScore}`;
   });
 
+  const width = 3 + 1 + maxLen + 2 + BAR_WIDTH + 2 + 3;
   return `\`\`\`
-   ${'URGENCY RANKING'.padStart(20 + BAR_WIDTH / 2 + 4)}
-${'─'.repeat(52)}
+${'─'.repeat(width)}
 ${lines.join('\n')}
-${'─'.repeat(52)}
-   0%                   50%               100%
+${'─'.repeat(width)}
 \`\`\``;
 }
 
