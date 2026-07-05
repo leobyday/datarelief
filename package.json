@@ -1,0 +1,60 @@
+{
+  "name": "@datarelief/mcp",
+  "version": "1.0.0",
+  "description": "MCP server for global crisis data aggregation. Integrates Claude with real-time humanitarian crisis information.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "datarelief-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist/",
+    "data/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "npm run compile && npm run generate:sites",
+    "compile": "tsc",
+    "generate:sites": "node scripts/generate-sites.js",
+    "dev": "tsc && node dist/index.js",
+    "test": "node --test dist/**/*.test.js",
+    "serve:local": "npx http-server public/",
+    "deploy:vercel": "npm run build && vercel --prod",
+    "publish:npm": "npm run build && npm publish",
+    "install:claude": "node scripts/install-claude-desktop.js"
+  },
+  "keywords": [
+    "mcp",
+    "claude",
+    "disaster-relief",
+    "humanitarian-aid",
+    "crisis-response",
+    "global-crises",
+    "data-aggregation"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR-USERNAME/datarelief-mcp.git"
+  },
+  "homepage": "https://datarelief.org",
+  "bugs": {
+    "url": "https://github.com/YOUR-USERNAME/datarelief-mcp/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.7.0",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
