@@ -216,7 +216,13 @@
     ],
     "resources": [
       {
-        "title": "How to help survivors of the Venezuela crisis",
+        "title": "How to help survivors of earthquakes in Venezuela",
+        "url": "https://www.rescue.org/article/how-help-survivors-earthquakes-venezuela",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "How to help people affected by the Venezuela crisis",
         "url": "https://www.rescue.org/article/venezuelan-crisis-what-you-should-know",
         "source": "IRC",
         "type": "guide"

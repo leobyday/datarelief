@@ -115,7 +115,8 @@ const CRISIS_RESOURCES = {
     { title: 'Ethiopia food security situation', url: 'https://reliefweb.int/country/eth', source: 'ReliefWeb', type: 'report' },
   ],
   'curated-venezuela-2024': [
-    { title: 'How to help survivors of the Venezuela crisis', url: 'https://www.rescue.org/article/venezuelan-crisis-what-you-should-know', source: 'IRC', type: 'guide' },
+    { title: 'How to help survivors of earthquakes in Venezuela', url: 'https://www.rescue.org/article/how-help-survivors-earthquakes-venezuela', source: 'IRC', type: 'guide' },
+    { title: 'How to help people affected by the Venezuela crisis', url: 'https://www.rescue.org/article/venezuelan-crisis-what-you-should-know', source: 'IRC', type: 'guide' },
     { title: 'Venezuela displacement emergency', url: 'https://www.unhcr.org/emergencies/venezuela-situation', source: 'UNHCR', type: 'report' },
   ],
 };
