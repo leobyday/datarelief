@@ -19,12 +19,28 @@
       {
         "slug": "unrwa",
         "name": "UNRWA",
-        "donationUrl": "https://donate.unrwa.org/"
+        "donationUrl": "https://donate.unrwa.org/",
+        "volunteerUrl": "https://www.unrwa.org/careers"
       },
       {
         "slug": "map",
         "name": "Medical Aid for Palestinians",
-        "donationUrl": "https://www.map.org.uk/donate/"
+        "donationUrl": "https://www.map.org.uk/donate/",
+        "volunteerUrl": "https://www.map.org.uk/get-involved/volunteer"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help people in Gaza",
+        "url": "https://www.rescue.org/article/how-help-people-gaza",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "Gaza humanitarian situation report",
+        "url": "https://www.ochaopt.org/",
+        "source": "OCHA",
+        "type": "report"
       }
     ]
   },
@@ -48,17 +64,34 @@
       {
         "slug": "save-the-children",
         "name": "Save the Children",
-        "donationUrl": "https://www.savethechildren.org/us/what-we-do/emergency-response/sudan-crisis"
+        "donationUrl": "https://www.savethechildren.org/us/what-we-do/emergency-response/sudan-crisis",
+        "volunteerUrl": "https://www.savethechildren.org/us/about-us/volunteer"
       },
       {
         "slug": "doctors-without-borders",
         "name": "Doctors Without Borders",
-        "donationUrl": "https://www.msf.org/donate"
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
       },
       {
         "slug": "care",
         "name": "CARE International",
-        "donationUrl": "https://www.care.org/our-work/disaster-response/emergencies/sudan-crisis/"
+        "donationUrl": "https://www.care.org/our-work/disaster-response/emergencies/sudan-crisis/",
+        "volunteerUrl": "https://www.care.org/get-involved/volunteer/"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help people affected by the Sudan crisis",
+        "url": "https://www.rescue.org/article/how-help-people-affected-sudan-crisis",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "Sudan emergency response overview",
+        "url": "https://www.unhcr.org/emergencies/sudan-emergency",
+        "source": "UNHCR",
+        "type": "report"
       }
     ]
   },
@@ -81,12 +114,28 @@
       {
         "slug": "oxfam",
         "name": "Oxfam",
-        "donationUrl": "https://www.oxfam.org/en/take-action/donate"
+        "donationUrl": "https://www.oxfam.org/en/take-action/donate",
+        "volunteerUrl": "https://www.oxfam.org/en/take-action/volunteer"
       },
       {
         "slug": "wfp",
         "name": "World Food Programme",
-        "donationUrl": "https://www.wfp.org/donate"
+        "donationUrl": "https://www.wfp.org/donate",
+        "volunteerUrl": "https://www.wfp.org/careers/opportunities"
+      }
+    ],
+    "resources": [
+      {
+        "title": "Ethiopia emergency — how to help",
+        "url": "https://www.rescue.org/article/ethiopia-emergency-how-help",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "Ethiopia food security situation",
+        "url": "https://reliefweb.int/country/eth",
+        "source": "ReliefWeb",
+        "type": "report"
       }
     ]
   },
@@ -110,12 +159,28 @@
       {
         "slug": "wfp",
         "name": "World Food Programme",
-        "donationUrl": "https://www.wfp.org/donate"
+        "donationUrl": "https://www.wfp.org/donate",
+        "volunteerUrl": "https://www.wfp.org/careers/opportunities"
       },
       {
         "slug": "save-the-children",
         "name": "Save the Children",
-        "donationUrl": "https://www.savethechildren.org/us/what-we-do/emergency-response/afghanistan"
+        "donationUrl": "https://www.savethechildren.org/us/what-we-do/emergency-response/afghanistan",
+        "volunteerUrl": "https://www.savethechildren.org/us/about-us/volunteer"
+      }
+    ],
+    "resources": [
+      {
+        "title": "Afghanistan crisis — how to help",
+        "url": "https://www.rescue.org/article/afghanistan-crisis-what-you-should-know",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "Afghanistan humanitarian dashboard",
+        "url": "https://reliefweb.int/country/afg",
+        "source": "ReliefWeb",
+        "type": "report"
       }
     ]
   },
@@ -139,12 +204,28 @@
       {
         "slug": "unhcr",
         "name": "UNHCR",
-        "donationUrl": "https://www.unhcr.org/donate/venezuela-emergency/"
+        "donationUrl": "https://www.unhcr.org/donate/venezuela-emergency/",
+        "volunteerUrl": "https://www.unhcr.org/get-involved"
       },
       {
         "slug": "mercy-corps",
         "name": "Mercy Corps",
-        "donationUrl": "https://www.mercycorps.org/who-we-help/venezuela"
+        "donationUrl": "https://www.mercycorps.org/who-we-help/venezuela",
+        "volunteerUrl": "https://www.mercycorps.org/volunteer"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help survivors of the Venezuela crisis",
+        "url": "https://www.rescue.org/article/venezuelan-crisis-what-you-should-know",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "Venezuela displacement emergency",
+        "url": "https://www.unhcr.org/emergencies/venezuela-situation",
+        "source": "UNHCR",
+        "type": "report"
       }
     ]
   },
@@ -169,12 +250,28 @@
       {
         "slug": "ifrc",
         "name": "Red Cross / Red Crescent",
-        "donationUrl": "https://www.ifrc.org/donate"
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
       },
       {
         "slug": "msf",
         "name": "Doctors Without Borders",
-        "donationUrl": "https://www.msf.org/donate"
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
       }
     ],
     "source": "GDACS (Red alert)"
@@ -200,12 +297,28 @@
       {
         "slug": "ifrc",
         "name": "Red Cross / Red Crescent",
-        "donationUrl": "https://www.ifrc.org/donate"
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
       },
       {
         "slug": "msf",
         "name": "Doctors Without Borders",
-        "donationUrl": "https://www.msf.org/donate"
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
       }
     ],
     "source": "GDACS (Orange alert)"
@@ -230,12 +343,28 @@
       {
         "slug": "ifrc",
         "name": "Red Cross / Red Crescent",
-        "donationUrl": "https://www.ifrc.org/donate"
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
       },
       {
         "slug": "msf",
         "name": "Doctors Without Borders",
-        "donationUrl": "https://www.msf.org/donate"
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
       }
     ],
     "source": "GDACS (Orange alert)"

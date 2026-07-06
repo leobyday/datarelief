@@ -11,11 +11,6 @@ function loadCrises() {
   return JSON.parse(readFileSync(DATA_PATH, 'utf8'));
 }
 
-function fundingGapPct(crisis) {
-  const total = crisis.fundingGapUSD + crisis.fundingReceivedUSD;
-  return total > 0 ? Math.round((crisis.fundingGapUSD / total) * 100) : 0;
-}
-
 function isStale(lastUpdated) {
   const days = (Date.now() - new Date(lastUpdated).getTime()) / (1000 * 60 * 60 * 24);
   return days > 30;
@@ -23,6 +18,32 @@ function isStale(lastUpdated) {
 
 function redirectUrl(crisisSlug, orgSlug) {
   return `${BASE_URL}/api/go/${crisisSlug}/${orgSlug}`;
+}
+
+// ─── Attribution logging ──────────────────────────────────────────────────────
+// Every tool call is logged with request context for attribution tracking.
+// Logs go to stdout (captured by Vercel log drain) and optionally to KV.
+
+function getClientMeta(req) {
+  return {
+    ip: req?.headers?.['x-forwarded-for']?.split(',')[0]?.trim()
+      || req?.headers?.['x-real-ip']
+      || 'unknown',
+    ua: req?.headers?.['user-agent'] || 'unknown',
+    // Claude Desktop sends a recognizable UA; other callers logged separately
+    client: (req?.headers?.['user-agent'] || '').includes('Claude') ? 'claude-desktop' : 'other',
+  };
+}
+
+function logAttribution(event, req) {
+  const entry = {
+    ...event,
+    timestamp: new Date().toISOString(),
+    ...getClientMeta(req),
+  };
+  // Structured JSON line — parseable by log drain (Vercel, Datadog, etc.)
+  console.log(JSON.stringify(entry));
+  return entry;
 }
 
 // ─── ASCII visualization helpers ─────────────────────────────────────────────
@@ -48,29 +69,9 @@ function fundingBar(crisis) {
 }
 
 function needsBar(crisis) {
-  // Each need gets equal weight across the bar — shows breadth of crisis
   const needs = crisis.criticalNeeds;
   const perNeed = Math.floor(BAR_WIDTH / needs.length);
   return needs.map(n => `${FULL.repeat(perNeed)} ${n}`).join('  ');
-}
-
-function formatCrisisCard(crisis, rank) {
-  const gapM = Math.round(crisis.fundingGapUSD / 1_000_000);
-  const affected = crisis.peopleAffected.toLocaleString();
-  const stale = isStale(crisis.lastUpdated) ? `⚠️  Data as of ${crisis.lastUpdated}\n` : `Updated ${crisis.lastUpdated}\n`;
-  const rankPrefix = rank != null ? `${rank}. ` : '';
-  const orgLinks = crisis.organizations.map(o => `[${o.name} →](${redirectUrl(crisis.slug, o.slug)})`).join(' · ');
-
-  return `**${rankPrefix}${crisis.name}** — ${crisis.country}
-${stale}
-Urgency  ${urgencyBar(crisis.urgencyScore)}
-${fundingBar(crisis)}
-
-People affected: ${affected}
-Funding gap:     $${gapM}M
-Areas of need:   ${needsBar(crisis)}
-
-Donate: ${orgLinks}`;
 }
 
 function shortName(crisis) {
@@ -85,34 +86,55 @@ function shortName(crisis) {
 
 function formatRankingChart(crises) {
   const maxLen = Math.max(...crises.map(c => shortName(c).length));
-
   const lines = crises.map((c, i) => {
     const rank = `${i + 1}.`.padEnd(3);
     const name = shortName(c).padEnd(maxLen);
     return `${rank} ${name}  ${bar(c.urgencyScore, 100)}  ${c.urgencyScore}`;
   });
-
   const width = 3 + 1 + maxLen + 2 + BAR_WIDTH + 2 + 3;
-  return `\`\`\`
-${'─'.repeat(width)}
-${lines.join('\n')}
-${'─'.repeat(width)}
-\`\`\``;
+  return `\`\`\`\n${'─'.repeat(width)}\n${lines.join('\n')}\n${'─'.repeat(width)}\n\`\`\``;
 }
 
-function logQuery(query, crisesReturned) {
-  console.log(JSON.stringify({
-    type: 'mcp_query',
-    timestamp: new Date().toISOString(),
-    query,
-    crisesReturned,
-    source: 'claude-mcp',
-  }));
+function formatOrgLinks(crisis) {
+  return crisis.organizations
+    .map(o => {
+      const donate = `[Donate →](${redirectUrl(crisis.slug, o.slug)})`;
+      const volunteer = o.volunteerUrl ? ` · [Volunteer ↗](${o.volunteerUrl})` : '';
+      return `**${o.name}** — ${donate}${volunteer}`;
+    })
+    .join('\n');
+}
+
+function formatResources(crisis) {
+  if (!crisis.resources || crisis.resources.length === 0) return '';
+  const links = crisis.resources
+    .map(r => `- [${r.title}](${r.url}) *(${r.source})*`)
+    .join('\n');
+  return `\n**How to help:**\n${links}`;
+}
+
+function formatCrisisCard(crisis, rank) {
+  const gapM = Math.round(crisis.fundingGapUSD / 1_000_000);
+  const affected = crisis.peopleAffected.toLocaleString();
+  const stale = isStale(crisis.lastUpdated) ? `⚠️  Data as of ${crisis.lastUpdated}` : `Updated ${crisis.lastUpdated}`;
+  const rankPrefix = rank != null ? `${rank}. ` : '';
+
+  return `**${rankPrefix}${crisis.name}** — ${crisis.country}
+${stale}
+
+Urgency  ${urgencyBar(crisis.urgencyScore)}
+${fundingBar(crisis)}
+
+People affected: ${affected}
+Funding gap:     $${gapM}M
+Areas of need:   ${needsBar(crisis)}
+
+${formatOrgLinks(crisis)}${formatResources(crisis)}`;
 }
 
 // ─── MCP Server ───────────────────────────────────────────────────────────────
 
-function createMcpServer() {
+function createMcpServer(req) {
   const server = new Server(
     { name: 'datarelief', version: '1.0.0' },
     { capabilities: { tools: {} } }
@@ -122,7 +144,7 @@ function createMcpServer() {
     tools: [
       {
         name: 'list_crises',
-        description: 'List active global crises ranked by urgency with visual charts. Use for "who needs help?", "where should I donate?", "what crises are happening?"',
+        description: 'List active global crises ranked by urgency with visual charts. Use for "who needs help?", "where should I donate?", "what crises are happening now?"',
         inputSchema: {
           type: 'object',
           properties: {
@@ -132,7 +154,7 @@ function createMcpServer() {
       },
       {
         name: 'get_crisis',
-        description: 'Get detailed info about a specific crisis. Use the slug from list_crises (e.g. "sudan-2024")',
+        description: 'Get detailed info, donation links, volunteer opportunities, and how-to-help guides for a specific crisis. Use the slug from list_crises.',
         inputSchema: {
           type: 'object',
           required: ['slug'],
@@ -143,18 +165,18 @@ function createMcpServer() {
       },
       {
         name: 'compare_crises',
-        description: 'Compare crises side by side with visual urgency bars',
+        description: 'Compare crises side by side with visual urgency bars — useful when a donor wants to decide where their money goes further.',
         inputSchema: {
           type: 'object',
           required: ['slugs'],
           properties: {
-            slugs: { type: 'array', items: { type: 'string' }, description: 'e.g. ["sudan-2024","gaza-2024"]' },
+            slugs: { type: 'array', items: { type: 'string' }, description: 'e.g. ["sudan-humanitarian-crisis","gaza-humanitarian-crisis"]' },
           },
         },
       },
       {
         name: 'filter_crises',
-        description: 'Filter crises by country, need type (e.g. "food", "medical"), or minimum urgency score',
+        description: 'Filter crises by country, need type (e.g. "food", "medical", "shelter"), or minimum urgency score',
         inputSchema: {
           type: 'object',
           properties: {
@@ -174,7 +196,8 @@ function createMcpServer() {
     if (name === 'list_crises') {
       const limit = args?.limit || 7;
       const ranked = [...crises].sort((a, b) => b.urgencyScore - a.urgencyScore).slice(0, limit);
-      logQuery('list_crises', ranked.map(c => c.slug));
+
+      logAttribution({ type: 'tool_call', tool: 'list_crises', args: { limit }, crises_returned: ranked.map(c => c.slug) }, req);
 
       const chart = formatRankingChart(ranked);
       const cards = ranked.map((c, i) => formatCrisisCard(c, i + 1)).join('\n\n---\n\n');
@@ -189,21 +212,29 @@ function createMcpServer() {
 
     if (name === 'get_crisis') {
       const crisis = crises.find(c => c.slug === args?.slug || c.id === args?.slug);
-      if (!crisis) return {
-        content: [{ type: 'text', text: `No crisis found with slug "${args?.slug}". Try list_crises to see available crises.` }],
-        isError: true,
-      };
-      logQuery(`get_crisis:${args.slug}`, [crisis.slug]);
+      if (!crisis) {
+        logAttribution({ type: 'tool_call', tool: 'get_crisis', args, result: 'not_found' }, req);
+        return {
+          content: [{ type: 'text', text: `No crisis found with slug "${args?.slug}". Try list_crises to see available crises.` }],
+          isError: true,
+        };
+      }
+
+      logAttribution({ type: 'tool_call', tool: 'get_crisis', args, crisis_slug: crisis.slug, crisis_country: crisis.country }, req);
       return { content: [{ type: 'text', text: formatCrisisCard(crisis) }] };
     }
 
     if (name === 'compare_crises') {
       const found = (args?.slugs || []).map(s => crises.find(c => c.slug === s || c.id === s)).filter(Boolean);
-      if (!found.length) return {
-        content: [{ type: 'text', text: 'No matching crises found. Try list_crises to see available slugs.' }],
-        isError: true,
-      };
-      logQuery(`compare:${args.slugs.join(',')}`, found.map(c => c.slug));
+      if (!found.length) {
+        logAttribution({ type: 'tool_call', tool: 'compare_crises', args, result: 'not_found' }, req);
+        return {
+          content: [{ type: 'text', text: 'No matching crises found. Try list_crises to see available slugs.' }],
+          isError: true,
+        };
+      }
+
+      logAttribution({ type: 'tool_call', tool: 'compare_crises', args, crises_returned: found.map(c => c.slug) }, req);
 
       const chart = formatRankingChart(found);
       const cards = found.map(c => formatCrisisCard(c)).join('\n\n---\n\n');
@@ -218,7 +249,8 @@ function createMcpServer() {
       if (args?.need)       filtered = filtered.filter(c => c.criticalNeeds.some(n => n.toLowerCase().includes(args.need.toLowerCase())));
       if (args?.minUrgency) filtered = filtered.filter(c => c.urgencyScore >= args.minUrgency);
       filtered.sort((a, b) => b.urgencyScore - a.urgencyScore);
-      logQuery(`filter:${JSON.stringify(args)}`, filtered.map(c => c.slug));
+
+      logAttribution({ type: 'tool_call', tool: 'filter_crises', args, crises_returned: filtered.map(c => c.slug) }, req);
 
       if (!filtered.length) return {
         content: [{ type: 'text', text: 'No crises match your filter. Try list_crises to see all active crises.' }],
@@ -229,6 +261,7 @@ function createMcpServer() {
       return { content: [{ type: 'text', text: `## Filtered Crises\n\n${chart}\n\n---\n\n${cards}` }] };
     }
 
+    logAttribution({ type: 'tool_call', tool: name, args, result: 'unknown_tool' }, req);
     return { content: [{ type: 'text', text: `Unknown tool: ${name}` }], isError: true };
   });
 
@@ -236,7 +269,7 @@ function createMcpServer() {
 }
 
 export default async function handler(req, res) {
-  const server = createMcpServer();
+  const server = createMcpServer(req);
   const transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined });
 
   res.on('close', () => {

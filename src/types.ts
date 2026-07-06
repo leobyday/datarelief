@@ -2,6 +2,14 @@ export interface CrisisOrg {
   slug: string;
   name: string;
   donationUrl: string;
+  volunteerUrl?: string;
+}
+
+export interface CrisisResource {
+  title: string;
+  url: string;
+  source: string;
+  type: 'article' | 'guide' | 'report' | 'donate' | 'volunteer';
 }
 
 export interface Crisis {
@@ -16,4 +24,6 @@ export interface Crisis {
   lastUpdated: string;
   criticalNeeds: string[];
   organizations: CrisisOrg[];
+  resources?: CrisisResource[];
+  source?: string;
 }
