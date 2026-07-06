@@ -4,122 +4,206 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DataRelief — The Data Layer for Humanitarian Relief</title>
-  <meta name="description" content="DataRelief systematically identifies where help is needed most and connects donors to the highest-impact humanitarian opportunities.">
+  <meta name="description" content="DataRelief aggregates real-time information about crises, needs, and organizations — connecting donors to the highest-impact humanitarian opportunities.">
   <meta property="og:title" content="DataRelief">
   <meta property="og:description" content="We're the data layer for humanitarian relief.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://datarelief.org">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single&family=Kode+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     html, body {
       height: 100%;
+      background: #0a0a0a;
+      color: #fefff4;
+      font-family: 'Kode Mono', monospace;
+      overflow-x: hidden;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
     }
 
-    /* ─── Hero ──────────────────────────────────────────────────── */
+    /* ─── Canvas ─────────────────────────────────────────────── */
+
+    #grid {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* ─── Nav ────────────────────────────────────────────────── */
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 10;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 28px 40px;
+    }
+
+    .logo-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .logo {
+      font-family: 'Bitcount Grid Single', 'Kode Mono', monospace;
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: 1.32px;
+      line-height: 1;
+    }
+
+    .tagline {
+      font-family: 'Kode Mono', monospace;
+      font-weight: 500;
+      font-size: clamp(11px, 1.1vw, 14px);
+      color: #9a9494;
+      letter-spacing: 0.54px;
+      max-width: 500px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 48px;
+      padding-top: 6px;
+    }
+
+    .nav-links a {
+      font-family: 'Bitcount Grid Single', 'Kode Mono', monospace;
+      font-size: clamp(16px, 1.4vw, 24px);
+      font-weight: 400;
+      color: #fefff4;
+      text-decoration: none;
+      letter-spacing: 0.72px;
+      transition: opacity 0.15s ease;
+    }
+
+    .nav-links a:hover { opacity: 0.6; }
+
+    /* ─── Hero ────────────────────────────────────────────────── */
 
     .hero {
-      flex: 1;
       position: relative;
+      z-index: 1;
+      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
+    }
+
+    /* ─── MCP bar ─────────────────────────────────────────────── */
+
+    .mcp-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #d9d9d9;
+      border-radius: 4px;
+      padding: 12px 16px 12px 20px;
+      width: min(551px, 90vw);
+    }
+
+    .mcp-url {
+      flex: 1;
+      font-family: 'Kode Mono', monospace;
+      font-size: clamp(13px, 1.4vw, 20px);
+      color: #0a0a0a;
+      letter-spacing: 1.2px;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: default;
+      user-select: all;
+      white-space: nowrap;
       overflow: hidden;
-
-      /*
-        HERO IMAGE — replace this gradient once the image is ready.
-        Drop the generated image into public/assets/hero.jpg and
-        uncomment the background-image line below.
-      */
-      background:
-        /* background-image: url('/assets/hero.jpg'), */
-        linear-gradient(
-          175deg,
-          #0d1b2a 0%,
-          #0f2744 12%,
-          #0a5ea8 32%,
-          #1a85d4 44%,
-          #f9c464 58%,
-          #e8925c 66%,
-          #5a8a6a 76%,
-          #2d5240 88%,
-          #1a3028 100%
-        );
-      background-size: cover;
-      background-position: center;
+      text-overflow: ellipsis;
     }
 
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.10) 0%,
-        rgba(0,0,0,0.25) 40%,
-        rgba(0,0,0,0.55) 100%
-      );
+    .copy-btn {
+      flex-shrink: 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      color: #0a0a0a;
+      opacity: 0.7;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      display: flex;
+      align-items: center;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      color: white;
-      padding: 0 24px;
-      animation: fadeUp 1.2s ease forwards;
+    .copy-btn:hover { opacity: 1; transform: scale(1.1); }
+
+    .copy-btn.copied { opacity: 1; }
+
+    /* ─── Hover zone labels ───────────────────────────────────── */
+
+    .hover-label {
+      position: fixed;
+      font-family: 'Kode Mono', monospace;
+      font-size: clamp(12px, 1.1vw, 16px);
+      color: rgba(254, 255, 244, 0.65);
+      letter-spacing: 0.04em;
       opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      z-index: 5;
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .hover-label.left {
+      bottom: 22%;
+      left: 8%;
     }
 
-    .hero-content h1 {
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 300;
-      letter-spacing: -0.02em;
-      line-height: 1;
-      margin-bottom: 20px;
+    .hover-label.right {
+      top: 48%;
+      right: 8%;
+      transform: translateY(-50%);
+      text-align: right;
+      max-width: 260px;
+      line-height: 1.5;
     }
 
-    .hero-content p {
-      font-size: clamp(1rem, 2.5vw, 1.4rem);
-      font-weight: 300;
-      opacity: 0.85;
-      letter-spacing: 0.01em;
-      max-width: 480px;
-      margin: 0 auto;
-    }
+    .hover-label.visible { opacity: 1; }
 
-    /* ─── Footer ────────────────────────────────────────────────── */
+    /* ─── Footer ──────────────────────────────────────────────── */
 
     footer {
-      background: #0d1b2a;
-      color: rgba(255,255,255,0.45);
-      padding: 24px 40px;
+      position: relative;
+      z-index: 10;
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.4);
+      padding: 20px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 12px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
+      font-family: 'Kode Mono', monospace;
     }
 
     .footer-brand {
-      font-weight: 500;
-      color: rgba(255,255,255,0.65);
+      font-family: 'Bitcount Grid Single', 'Kode Mono', monospace;
+      font-weight: 400;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
       letter-spacing: 0.02em;
     }
 
@@ -129,36 +213,50 @@
     }
 
     .footer-links a {
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.4);
       text-decoration: none;
       transition: color 0.15s ease;
     }
 
-    .footer-links a:hover {
-      color: rgba(255,255,255,0.85);
-    }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
 
     @media (max-width: 480px) {
-      footer {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 24px;
-      }
-      .footer-links {
-        gap: 20px;
-      }
+      nav { padding: 20px 20px; }
+      .nav-links { gap: 24px; }
+      footer { flex-direction: column; align-items: flex-start; padding: 20px; }
+      .footer-links { gap: 20px; }
     }
   </style>
 </head>
 <body>
 
-  <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Data Relief</h1>
-      <p>We're the data layer for humanitarian relief</p>
+  <canvas id="grid"></canvas>
+
+  <nav>
+    <div class="logo-block">
+      <span class="logo">Data Relief</span>
+      <span class="tagline">We aggregate real-time information about crises, needs, and organizations.</span>
     </div>
-  </section>
+    <div class="nav-links">
+      <a href="/contact.html">Organizations</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main class="hero">
+    <div class="mcp-bar">
+      <span class="mcp-url" id="mcp-url-text">https://datarelief.org/mcp</span>
+      <button class="copy-btn" id="copy-btn" onclick="copyMcp()" title="Copy MCP URL">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+  </main>
+
+  <div class="hover-label left" id="label-left">Who needs help?</div>
+  <div class="hover-label right" id="label-right">Where do I donate<br>for the Earthquake?</div>
 
   <footer>
     <span class="footer-brand">DataRelief</span>
@@ -169,5 +267,122 @@
     </nav>
   </footer>
 
+  <script>
+    // ─── Copy MCP URL ──────────────────────────────────────────────────────────
+
+    function copyMcp() {
+      const url = 'https://datarelief.org/mcp';
+      navigator.clipboard.writeText(url).then(() => {
+        const btn = document.getElementById('copy-btn');
+        const txt = document.getElementById('mcp-url-text');
+        btn.classList.add('copied');
+        const prev = txt.textContent;
+        txt.textContent = 'Copied!';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          txt.textContent = prev;
+        }, 1800);
+      });
+    }
+
+    // ─── Hover zones ───────────────────────────────────────────────────────────
+
+    const labelLeft  = document.getElementById('label-left');
+    const labelRight = document.getElementById('label-right');
+
+    function checkHoverZones(x, y) {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      labelLeft.classList.toggle('visible',  x < w * 0.28 && y > h * 0.62);
+      labelRight.classList.toggle('visible', x > w * 0.52 && y > h * 0.35 && y < h * 0.72);
+    }
+
+    // ─── Dot grid animation ────────────────────────────────────────────────────
+
+    const canvas = document.getElementById('grid');
+    const ctx    = canvas.getContext('2d');
+
+    let W, H, mouseX = -9999, mouseY = -9999, t = 0;
+
+    function resize() {
+      W = canvas.width  = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      checkHoverZones(e.clientX, e.clientY);
+    });
+
+    document.addEventListener('mouseleave', () => {
+      mouseX = -9999; mouseY = -9999;
+      labelLeft.classList.remove('visible');
+      labelRight.classList.remove('visible');
+    });
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+
+      const cx = W / 2;
+      const cy = H / 2;
+      const maxDist = Math.sqrt(cx * cx + cy * cy);
+
+      const SPACING = 18;
+      const cols = Math.ceil(W / SPACING) + 1;
+      const rows = Math.ceil(H / SPACING) + 1;
+
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const x = c * SPACING;
+          const y = r * SPACING;
+
+          const dx = x - cx;
+          const dy = y - cy;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const norm = dist / maxDist; // 0 = center, 1 = corner
+
+          // Halftone base — dots grow larger and brighter toward centre
+          const halftone = Math.max(0, 1 - norm * 1.15);
+
+          // Two overlapping radial ripple waves pulsing from centre
+          const wave1 = Math.sin(dist * 0.022 - t * 2.6) * 0.5 + 0.5;
+          const wave2 = Math.sin(dist * 0.016 - t * 1.9 + 2.2) * 0.5 + 0.5;
+          const ripple = wave1 * 0.55 + wave2 * 0.45;
+
+          // Mouse bloom — dots near cursor brighten and swell
+          const mdx = x - mouseX;
+          const mdy = y - mouseY;
+          const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+          const bloom = Math.max(0, 1 - mdist / 90) ** 2;
+
+          const minSize = SPACING * 0.06;
+          const maxSize = SPACING * 0.46;
+          const size = minSize
+            + (maxSize - minSize) * (halftone * 0.55 + ripple * 0.30 + bloom * 0.45);
+
+          if (size < 0.4) continue;
+
+          const alpha = Math.min(0.92,
+            0.08
+            + halftone * 0.58
+            + ripple   * 0.18
+            + bloom    * 0.45
+          );
+
+          ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+          ctx.fillRect(x - size * 0.5, y - size * 0.5, size, size);
+        }
+      }
+
+      t += 0.016;
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+  </script>
 </body>
 </html>
