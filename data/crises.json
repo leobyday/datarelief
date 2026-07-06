@@ -1,15 +1,49 @@
 [
   {
-    "id": "sudan-2024",
+    "id": "curated-gaza-2024",
+    "name": "Gaza Humanitarian Crisis",
+    "country": "Palestine",
+    "slug": "gaza-humanitarian-crisis",
+    "peopleAffected": 2200000,
+    "fundingGapUSD": 3500000000,
+    "fundingReceivedUSD": 1200000000,
+    "urgencyScore": 98,
+    "lastUpdated": "2024-11-01",
+    "criticalNeeds": [
+      "Medical supplies",
+      "Food",
+      "Water",
+      "Fuel"
+    ],
+    "organizations": [
+      {
+        "slug": "unrwa",
+        "name": "UNRWA",
+        "donationUrl": "https://donate.unrwa.org/"
+      },
+      {
+        "slug": "map",
+        "name": "Medical Aid for Palestinians",
+        "donationUrl": "https://www.map.org.uk/donate/"
+      }
+    ]
+  },
+  {
+    "id": "curated-sudan-2024",
     "name": "Sudan Humanitarian Crisis",
     "country": "Sudan",
-    "slug": "sudan-2024",
+    "slug": "sudan-humanitarian-crisis",
     "peopleAffected": 25000000,
     "fundingGapUSD": 2800000000,
     "fundingReceivedUSD": 900000000,
     "urgencyScore": 95,
     "lastUpdated": "2024-11-01",
-    "criticalNeeds": ["Food", "Water", "Medical supplies", "Shelter"],
+    "criticalNeeds": [
+      "Food",
+      "Water",
+      "Medical supplies",
+      "Shelter"
+    ],
     "organizations": [
       {
         "slug": "save-the-children",
@@ -29,43 +63,52 @@
     ]
   },
   {
-    "id": "gaza-2024",
-    "name": "Gaza Humanitarian Crisis",
-    "country": "Palestine",
-    "slug": "gaza-2024",
-    "peopleAffected": 2200000,
-    "fundingGapUSD": 3500000000,
-    "fundingReceivedUSD": 1200000000,
-    "urgencyScore": 98,
-    "lastUpdated": "2024-11-01",
-    "criticalNeeds": ["Medical supplies", "Food", "Water", "Fuel"],
+    "id": "curated-ethiopia-2024",
+    "name": "Ethiopia Drought & Conflict",
+    "country": "Ethiopia",
+    "slug": "ethiopia-drought-conflict",
+    "peopleAffected": 20400000,
+    "fundingGapUSD": 1900000000,
+    "fundingReceivedUSD": 320000000,
+    "urgencyScore": 90,
+    "lastUpdated": "2024-10-01",
+    "criticalNeeds": [
+      "Food",
+      "Water",
+      "Medical supplies"
+    ],
     "organizations": [
       {
-        "slug": "unrwa",
-        "name": "UNRWA",
-        "donationUrl": "https://donate.unrwa.org/"
+        "slug": "oxfam",
+        "name": "Oxfam",
+        "donationUrl": "https://www.oxfam.org/en/take-action/donate"
       },
       {
-        "slug": "medical-aid-for-palestinians",
-        "name": "Medical Aid for Palestinians",
-        "donationUrl": "https://www.map.org.uk/donate/"
+        "slug": "wfp",
+        "name": "World Food Programme",
+        "donationUrl": "https://www.wfp.org/donate"
       }
     ]
   },
   {
-    "id": "afghanistan-2024",
+    "id": "curated-afghanistan-2024",
     "name": "Afghanistan Humanitarian Crisis",
     "country": "Afghanistan",
-    "slug": "afghanistan-2024",
+    "slug": "afghanistan-humanitarian-crisis",
     "peopleAffected": 23700000,
     "fundingGapUSD": 2100000000,
     "fundingReceivedUSD": 600000000,
     "urgencyScore": 88,
     "lastUpdated": "2024-10-15",
-    "criticalNeeds": ["Food", "Healthcare", "Winter supplies", "Education"],
+    "criticalNeeds": [
+      "Food",
+      "Healthcare",
+      "Winter supplies",
+      "Education"
+    ],
     "organizations": [
       {
-        "slug": "world-food-programme",
+        "slug": "wfp",
         "name": "World Food Programme",
         "donationUrl": "https://www.wfp.org/donate"
       },
@@ -77,16 +120,21 @@
     ]
   },
   {
-    "id": "venezuela-2024",
+    "id": "curated-venezuela-2024",
     "name": "Venezuela Displacement Crisis",
     "country": "Venezuela",
-    "slug": "venezuela-2024",
+    "slug": "venezuela-displacement-crisis",
     "peopleAffected": 7700000,
     "fundingGapUSD": 1600000000,
     "fundingReceivedUSD": 280000000,
     "urgencyScore": 82,
     "lastUpdated": "2024-09-20",
-    "criticalNeeds": ["Food", "Medicine", "Shelter", "Cash assistance"],
+    "criticalNeeds": [
+      "Food",
+      "Medicine",
+      "Shelter",
+      "Cash assistance"
+    ],
     "organizations": [
       {
         "slug": "unhcr",
@@ -101,27 +149,95 @@
     ]
   },
   {
-    "id": "ethiopia-2024",
-    "name": "Ethiopia Drought & Conflict",
-    "country": "Ethiopia",
-    "slug": "ethiopia-2024",
-    "peopleAffected": 20400000,
-    "fundingGapUSD": 1900000000,
-    "fundingReceivedUSD": 320000000,
-    "urgencyScore": 90,
-    "lastUpdated": "2024-10-01",
-    "criticalNeeds": ["Food", "Water", "Medical supplies"],
+    "id": "gdacs-TC-1001279",
+    "name": "Red notification for tropical cyclone BAVI-26. Population affected by Category 1",
+    "country": "Guam, Northern Mariana Islands, Japan, Taiwan",
+    "slug": "red-notification-for-tropical-cyclone-bavi-26-popu",
+    "peopleAffected": 2000000,
+    "fundingGapUSD": 480000000,
+    "fundingReceivedUSD": 120000000,
+    "urgencyScore": 81,
+    "lastUpdated": "2026-07-01",
+    "criticalNeeds": [
+      "Shelter",
+      "Water",
+      "Food",
+      "Medical supplies",
+      "Generators"
+    ],
     "organizations": [
       {
-        "slug": "oxfam",
-        "name": "Oxfam",
-        "donationUrl": "https://www.oxfam.org/en/take-action/donate"
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate"
       },
       {
-        "slug": "world-food-programme",
-        "name": "World Food Programme",
-        "donationUrl": "https://www.wfp.org/donate"
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate"
       }
-    ]
+    ],
+    "source": "GDACS (Red alert)"
+  },
+  {
+    "id": "gdacs-TC-1001281",
+    "name": "Orange notification for tropical cyclone MAYSAK-26. Population affected by Categ",
+    "country": "Viet Nam, China, Laos",
+    "slug": "orange-notification-for-tropical-cyclone-maysak-26",
+    "peopleAffected": 2000000,
+    "fundingGapUSD": 420000000,
+    "fundingReceivedUSD": 180000000,
+    "urgencyScore": 60,
+    "lastUpdated": "2026-07-01",
+    "criticalNeeds": [
+      "Shelter",
+      "Water",
+      "Food",
+      "Medical supplies",
+      "Generators"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
+  },
+  {
+    "id": "gdacs-DR-1018431",
+    "name": "Drought is on going in Madagascar",
+    "country": "Madagascar",
+    "slug": "drought-is-on-going-in-madagascar",
+    "peopleAffected": 200000,
+    "fundingGapUSD": 42000000,
+    "fundingReceivedUSD": 18000000,
+    "urgencyScore": 55,
+    "lastUpdated": "2026-04-30",
+    "criticalNeeds": [
+      "Water",
+      "Food",
+      "Livestock feed",
+      "Medical supplies"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
   }
 ]

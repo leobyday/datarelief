@@ -14,14 +14,12 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "echo 'API-only deployment — no build step'",
+    "build": "npm run compile && npm run fetch:data",
     "compile": "tsc",
-    "generate:sites": "node scripts/generate-sites.js",
+    "fetch:data": "node scripts/fetch-real-data.js",
     "dev": "tsc && node dist/index.js",
     "test": "node --test dist/**/*.test.js",
-    "serve:local": "npx http-server public/",
-    "publish:npm": "npm run build && npm publish",
-    "install:claude": "node scripts/install-claude-desktop.js"
+    "serve:local": "npx http-server public/"
   },
   "keywords": [
     "mcp",
@@ -43,7 +41,8 @@
     "url": "https://github.com/leobyday/datarelief/issues"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.29.0"
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "axios": "^1.6.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

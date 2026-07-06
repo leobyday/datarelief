@@ -1,0 +1,42 @@
+name: Update Crisis Data
+
+on:
+  schedule:
+    - cron: '0 * * * *'   # every hour
+  workflow_dispatch:       # manual trigger
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Fetch real crisis data
+        run: node scripts/fetch-real-data.js
+        env:
+          GLOBALGIVING_API_KEY: ${{ secrets.GLOBALGIVING_API_KEY }}
+
+      - name: Commit updated data
+        run: |
+          git config user.email "bot@datarelief.org"
+          git config user.name "Crisis Data Bot"
+          git add data/crises.json
+          git diff --staged --quiet || git commit -m "🔄 Crisis data refresh $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
+
+      - name: Trigger Vercel redeploy
+        run: |
+          curl -s -X POST "https://api.vercel.com/v1/deployments" \
+            -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"datarelief","gitSource":{"type":"github","ref":"main","repoId":"${{ secrets.VERCEL_REPO_ID }}"}}' || true
