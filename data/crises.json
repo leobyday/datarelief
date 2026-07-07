@@ -422,6 +422,52 @@
     "source": "GDACS (Orange alert)"
   },
   {
+    "id": "gdacs-FL-1103933",
+    "name": "Green flood alert in China",
+    "country": "China",
+    "slug": "green-flood-alert-in-china",
+    "peopleAffected": 200000,
+    "fundingGapUSD": 42000000,
+    "fundingReceivedUSD": 18000000,
+    "urgencyScore": 55,
+    "lastUpdated": "2026-06-09",
+    "criticalNeeds": [
+      "Water purification",
+      "Medical supplies",
+      "Shelter",
+      "Food"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
+  },
+  {
     "id": "gdacs-DR-1018431",
     "name": "Drought is on going in Madagascar",
     "country": "Madagascar",
