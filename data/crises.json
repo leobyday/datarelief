@@ -283,53 +283,6 @@
     "source": "GDACS (Red alert)"
   },
   {
-    "id": "gdacs-TC-1001281",
-    "name": "Orange notification for tropical cyclone MAYSAK-26. Population affected by Categ",
-    "country": "Viet Nam, China, Laos",
-    "slug": "orange-notification-for-tropical-cyclone-maysak-26",
-    "peopleAffected": 2000000,
-    "fundingGapUSD": 420000000,
-    "fundingReceivedUSD": 180000000,
-    "urgencyScore": 60,
-    "lastUpdated": "2026-07-01",
-    "criticalNeeds": [
-      "Shelter",
-      "Water",
-      "Food",
-      "Medical supplies",
-      "Generators"
-    ],
-    "organizations": [
-      {
-        "slug": "ifrc",
-        "name": "Red Cross / Red Crescent",
-        "donationUrl": "https://www.ifrc.org/donate",
-        "volunteerUrl": "https://www.ifrc.org/get-involved"
-      },
-      {
-        "slug": "msf",
-        "name": "Doctors Without Borders",
-        "donationUrl": "https://www.msf.org/donate",
-        "volunteerUrl": "https://www.msf.org/work-with-us"
-      }
-    ],
-    "resources": [
-      {
-        "title": "How to help disaster survivors",
-        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
-        "source": "IRC",
-        "type": "guide"
-      },
-      {
-        "title": "GDACS event information",
-        "url": "https://www.gdacs.org/",
-        "source": "GDACS",
-        "type": "report"
-      }
-    ],
-    "source": "GDACS (Orange alert)"
-  },
-  {
     "id": "gdacs-WF-1029331",
     "name": "Orange forest fire notification in France",
     "country": "France",
