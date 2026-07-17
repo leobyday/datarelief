@@ -236,53 +236,6 @@
     ]
   },
   {
-    "id": "gdacs-EQ-1552420",
-    "name": "Orange earthquake  in Mexico 17/07/2026 14:48 UTC",
-    "country": "Mexico",
-    "slug": "orange-earthquake-magnitude-7-3m-depth-18-584km-in",
-    "peopleAffected": 200000,
-    "fundingGapUSD": 42000000,
-    "fundingReceivedUSD": 18000000,
-    "urgencyScore": 60,
-    "lastUpdated": "2026-07-17",
-    "criticalNeeds": [
-      "Shelter",
-      "Medical supplies",
-      "Water",
-      "Food",
-      "Search & rescue"
-    ],
-    "organizations": [
-      {
-        "slug": "ifrc",
-        "name": "Red Cross / Red Crescent",
-        "donationUrl": "https://www.ifrc.org/donate",
-        "volunteerUrl": "https://www.ifrc.org/get-involved"
-      },
-      {
-        "slug": "msf",
-        "name": "Doctors Without Borders",
-        "donationUrl": "https://www.msf.org/donate",
-        "volunteerUrl": "https://www.msf.org/work-with-us"
-      }
-    ],
-    "resources": [
-      {
-        "title": "How to help disaster survivors",
-        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
-        "source": "IRC",
-        "type": "guide"
-      },
-      {
-        "title": "GDACS event information",
-        "url": "https://www.gdacs.org/",
-        "source": "GDACS",
-        "type": "report"
-      }
-    ],
-    "source": "GDACS (Orange alert)"
-  },
-  {
     "id": "gdacs-VO-1000144",
     "name": "Volcanic eruption is on going for Mayon in Philippines",
     "country": "Philippines",
