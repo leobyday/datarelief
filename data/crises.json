@@ -236,6 +236,53 @@
     ]
   },
   {
+    "id": "gdacs-EQ-1552752",
+    "name": "Orange earthquake  in Peru 19/07/2026 02:24 UTC",
+    "country": "Peru",
+    "slug": "orange-earthquake-magnitude-5-5m-depth-10km-in-per",
+    "peopleAffected": 200000,
+    "fundingGapUSD": 42000000,
+    "fundingReceivedUSD": 18000000,
+    "urgencyScore": 60,
+    "lastUpdated": "2026-07-19",
+    "criticalNeeds": [
+      "Shelter",
+      "Medical supplies",
+      "Water",
+      "Food",
+      "Search & rescue"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
+  },
+  {
     "id": "gdacs-VO-1000144",
     "name": "Volcanic eruption is on going for Mayon in Philippines",
     "country": "Philippines",
