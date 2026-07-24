@@ -98,9 +98,9 @@ function formatRankingChart(crises) {
 function formatOrgLinks(crisis) {
   return crisis.organizations
     .map(o => {
-      const donate = `[Donate →](${redirectUrl(crisis.slug, o.slug)})`;
-      const volunteer = o.volunteerUrl ? ` · [Volunteer ↗](${o.volunteerUrl})` : '';
-      return `**${o.name}** — ${donate}${volunteer}`;
+      const donate = redirectUrl(crisis.slug, o.slug);
+      const volunteer = o.volunteerUrl ? `\n   Volunteer: ${o.volunteerUrl}` : '';
+      return `**${o.name}**\n   Donate: ${donate}${volunteer}`;
     })
     .join('\n');
 }
@@ -108,7 +108,7 @@ function formatOrgLinks(crisis) {
 function formatResources(crisis) {
   if (!crisis.resources || crisis.resources.length === 0) return '';
   const links = crisis.resources
-    .map(r => `- [${r.title}](${r.url}) *(${r.source})*`)
+    .map(r => `- ${r.title} (${r.source}): ${r.url}`)
     .join('\n');
   return `\n**How to help:**\n${links}`;
 }
