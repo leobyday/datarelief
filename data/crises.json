@@ -236,6 +236,52 @@
     ]
   },
   {
+    "id": "gdacs-WF-1029628",
+    "name": "Red forest fire notification in France",
+    "country": "France",
+    "slug": "red-forest-fire-notification-in-france",
+    "peopleAffected": 1000000,
+    "fundingGapUSD": 240000000,
+    "fundingReceivedUSD": 60000000,
+    "urgencyScore": 76,
+    "lastUpdated": "2026-07-23",
+    "criticalNeeds": [
+      "Evacuation support",
+      "Shelter",
+      "Medical supplies",
+      "Food"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Red alert)"
+  },
+  {
     "id": "gdacs-TC-1001294",
     "name": "Orange notification for tropical cyclone NOUL-26. Population affected by Categor",
     "country": "China, Philippines",
@@ -251,6 +297,144 @@
       "Food",
       "Medical supplies",
       "Generators"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
+  },
+  {
+    "id": "gdacs-WF-1029794",
+    "name": "Green forest fire notification in Spain",
+    "country": "Spain",
+    "slug": "green-forest-fire-notification-in-spain",
+    "peopleAffected": 200000,
+    "fundingGapUSD": 42000000,
+    "fundingReceivedUSD": 18000000,
+    "urgencyScore": 55,
+    "lastUpdated": "2026-07-26",
+    "criticalNeeds": [
+      "Evacuation support",
+      "Shelter",
+      "Medical supplies",
+      "Food"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
+  },
+  {
+    "id": "gdacs-WF-1029643",
+    "name": "Orange forest fire notification in Spain",
+    "country": "Spain",
+    "slug": "orange-forest-fire-notification-in-spain",
+    "peopleAffected": 200000,
+    "fundingGapUSD": 42000000,
+    "fundingReceivedUSD": 18000000,
+    "urgencyScore": 55,
+    "lastUpdated": "2026-07-24",
+    "criticalNeeds": [
+      "Evacuation support",
+      "Shelter",
+      "Medical supplies",
+      "Food"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
+  },
+  {
+    "id": "gdacs-WF-1029540",
+    "name": "Green forest fire notification in Spain",
+    "country": "Spain",
+    "slug": "green-forest-fire-notification-in-spain",
+    "peopleAffected": 200000,
+    "fundingGapUSD": 42000000,
+    "fundingReceivedUSD": 18000000,
+    "urgencyScore": 55,
+    "lastUpdated": "2026-07-22",
+    "criticalNeeds": [
+      "Evacuation support",
+      "Shelter",
+      "Medical supplies",
+      "Food"
     ],
     "organizations": [
       {
