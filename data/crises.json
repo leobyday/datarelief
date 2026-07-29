@@ -237,9 +237,9 @@
   },
   {
     "id": "gdacs-FL-1104051",
-    "name": "Green flood alert in China",
+    "name": "Red flood alert in China",
     "country": "China",
-    "slug": "green-flood-alert-in-china",
+    "slug": "red-flood-alert-in-china",
     "peopleAffected": 1000000,
     "fundingGapUSD": 240000000,
     "fundingReceivedUSD": 60000000,
