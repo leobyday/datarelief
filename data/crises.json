@@ -328,52 +328,6 @@
     "source": "GDACS (Red alert)"
   },
   {
-    "id": "gdacs-WF-1029958",
-    "name": "Green forest fire notification in Greece",
-    "country": "Greece",
-    "slug": "green-forest-fire-notification-in-greece",
-    "peopleAffected": 200000,
-    "fundingGapUSD": 42000000,
-    "fundingReceivedUSD": 18000000,
-    "urgencyScore": 55,
-    "lastUpdated": "2026-07-31",
-    "criticalNeeds": [
-      "Evacuation support",
-      "Shelter",
-      "Medical supplies",
-      "Food"
-    ],
-    "organizations": [
-      {
-        "slug": "ifrc",
-        "name": "Red Cross / Red Crescent",
-        "donationUrl": "https://www.ifrc.org/donate",
-        "volunteerUrl": "https://www.ifrc.org/get-involved"
-      },
-      {
-        "slug": "msf",
-        "name": "Doctors Without Borders",
-        "donationUrl": "https://www.msf.org/donate",
-        "volunteerUrl": "https://www.msf.org/work-with-us"
-      }
-    ],
-    "resources": [
-      {
-        "title": "How to help disaster survivors",
-        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
-        "source": "IRC",
-        "type": "guide"
-      },
-      {
-        "title": "GDACS event information",
-        "url": "https://www.gdacs.org/",
-        "source": "GDACS",
-        "type": "report"
-      }
-    ],
-    "source": "GDACS (Orange alert)"
-  },
-  {
     "id": "gdacs-WF-1029794",
     "name": "Orange forest fire notification in Spain",
     "country": "Spain",
