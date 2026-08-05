@@ -282,52 +282,6 @@
     "source": "GDACS (Red alert)"
   },
   {
-    "id": "gdacs-WF-1029628",
-    "name": "Red forest fire notification in France",
-    "country": "France",
-    "slug": "red-forest-fire-notification-in-france",
-    "peopleAffected": 1000000,
-    "fundingGapUSD": 240000000,
-    "fundingReceivedUSD": 60000000,
-    "urgencyScore": 76,
-    "lastUpdated": "2026-07-23",
-    "criticalNeeds": [
-      "Evacuation support",
-      "Shelter",
-      "Medical supplies",
-      "Food"
-    ],
-    "organizations": [
-      {
-        "slug": "ifrc",
-        "name": "Red Cross / Red Crescent",
-        "donationUrl": "https://www.ifrc.org/donate",
-        "volunteerUrl": "https://www.ifrc.org/get-involved"
-      },
-      {
-        "slug": "msf",
-        "name": "Doctors Without Borders",
-        "donationUrl": "https://www.msf.org/donate",
-        "volunteerUrl": "https://www.msf.org/work-with-us"
-      }
-    ],
-    "resources": [
-      {
-        "title": "How to help disaster survivors",
-        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
-        "source": "IRC",
-        "type": "guide"
-      },
-      {
-        "title": "GDACS event information",
-        "url": "https://www.gdacs.org/",
-        "source": "GDACS",
-        "type": "report"
-      }
-    ],
-    "source": "GDACS (Red alert)"
-  },
-  {
     "id": "gdacs-TC-1001297",
     "name": "Orange notification for tropical cyclone DOLPHIN-26. Population affected by Cate",
     "country": "Marshall Islands, Japan, China",
@@ -384,52 +338,6 @@
     "fundingReceivedUSD": 18000000,
     "urgencyScore": 55,
     "lastUpdated": "2026-08-01",
-    "criticalNeeds": [
-      "Evacuation support",
-      "Shelter",
-      "Medical supplies",
-      "Food"
-    ],
-    "organizations": [
-      {
-        "slug": "ifrc",
-        "name": "Red Cross / Red Crescent",
-        "donationUrl": "https://www.ifrc.org/donate",
-        "volunteerUrl": "https://www.ifrc.org/get-involved"
-      },
-      {
-        "slug": "msf",
-        "name": "Doctors Without Borders",
-        "donationUrl": "https://www.msf.org/donate",
-        "volunteerUrl": "https://www.msf.org/work-with-us"
-      }
-    ],
-    "resources": [
-      {
-        "title": "How to help disaster survivors",
-        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
-        "source": "IRC",
-        "type": "guide"
-      },
-      {
-        "title": "GDACS event information",
-        "url": "https://www.gdacs.org/",
-        "source": "GDACS",
-        "type": "report"
-      }
-    ],
-    "source": "GDACS (Orange alert)"
-  },
-  {
-    "id": "gdacs-WF-1029958",
-    "name": "Orange forest fire notification in Greece",
-    "country": "Greece",
-    "slug": "orange-forest-fire-notification-in-greece",
-    "peopleAffected": 200000,
-    "fundingGapUSD": 42000000,
-    "fundingReceivedUSD": 18000000,
-    "urgencyScore": 55,
-    "lastUpdated": "2026-07-31",
     "criticalNeeds": [
       "Evacuation support",
       "Shelter",
