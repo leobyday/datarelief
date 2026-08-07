@@ -234,5 +234,329 @@
         "type": "report"
       }
     ]
+  },
+  {
+    "id": "gdacs-EQ-1556215",
+    "name": "Orange earthquake  in Philippines 05/08/2026 04:14 UTC",
+    "country": "Philippines",
+    "slug": "orange-earthquake-magnitude-6-3m-depth-10km-in-phi",
+    "peopleAffected": 200000,
+    "fundingGapUSD": 42000000,
+    "fundingReceivedUSD": 18000000,
+    "urgencyScore": 60,
+    "lastUpdated": "2026-08-05",
+    "criticalNeeds": [
+      "Shelter",
+      "Medical supplies",
+      "Water",
+      "Food",
+      "Search & rescue"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
+  },
+  {
+    "id": "gdacs-TC-1001297",
+    "name": "Orange notification for tropical cyclone DOLPHIN-26. Population affected by Cate",
+    "country": "Marshall Islands, Japan, China",
+    "slug": "orange-notification-for-tropical-cyclone-dolphin-2",
+    "peopleAffected": 2000000,
+    "fundingGapUSD": 420000000,
+    "fundingReceivedUSD": 180000000,
+    "urgencyScore": 60,
+    "lastUpdated": "2026-07-27",
+    "criticalNeeds": [
+      "Shelter",
+      "Water",
+      "Food",
+      "Medical supplies",
+      "Generators"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
+  },
+  {
+    "id": "gdacs-WF-1029987",
+    "name": "Orange forest fire notification in Greece",
+    "country": "Greece",
+    "slug": "orange-forest-fire-notification-in-greece",
+    "peopleAffected": 200000,
+    "fundingGapUSD": 42000000,
+    "fundingReceivedUSD": 18000000,
+    "urgencyScore": 55,
+    "lastUpdated": "2026-08-01",
+    "criticalNeeds": [
+      "Evacuation support",
+      "Shelter",
+      "Medical supplies",
+      "Food"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
+  },
+  {
+    "id": "gdacs-DR-1027465",
+    "name": "Drought is on going in Democratic Republic of Congo",
+    "country": "Democratic Republic of Congo, Kenya, Tanzania, Uganda",
+    "slug": "drought-is-on-going-in-democratic-republic-of-cong",
+    "peopleAffected": 200000,
+    "fundingGapUSD": 42000000,
+    "fundingReceivedUSD": 18000000,
+    "urgencyScore": 55,
+    "lastUpdated": "2026-07-29",
+    "criticalNeeds": [
+      "Water",
+      "Food",
+      "Livestock feed",
+      "Medical supplies"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
+  },
+  {
+    "id": "gdacs-DR-1027450",
+    "name": "Drought is on going in Ethiopia",
+    "country": "Ethiopia, Kenya, Somalia",
+    "slug": "drought-is-on-going-in-ethiopia-kenya-somalia",
+    "peopleAffected": 200000,
+    "fundingGapUSD": 42000000,
+    "fundingReceivedUSD": 18000000,
+    "urgencyScore": 55,
+    "lastUpdated": "2026-07-03",
+    "criticalNeeds": [
+      "Water",
+      "Food",
+      "Livestock feed",
+      "Medical supplies"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
+  },
+  {
+    "id": "gdacs-DR-1018332",
+    "name": "Drought is on going in Albania",
+    "country": "Albania, Austria, Bosnia &amp; Herzegovina, Belgium, Bulgaria, Belarus, Switzerland, Czech Republic, Germany, Denmark, Spain, France, Croatia, Hungary, Italy, Liechtenstein, Luxembourg, Monaco, Montenegro, The Republic of North Macedonia, Poland, Romania, Serbia, Sweden, Slovenia, Slovakia, San Marino, Ukraine, ,",
+    "slug": "drought-is-on-going-in-albania-austria-bosnia-amp-",
+    "peopleAffected": 200000,
+    "fundingGapUSD": 42000000,
+    "fundingReceivedUSD": 18000000,
+    "urgencyScore": 55,
+    "lastUpdated": "2026-02-11",
+    "criticalNeeds": [
+      "Water",
+      "Food",
+      "Livestock feed",
+      "Medical supplies"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
+  },
+  {
+    "id": "gdacs-DR-1018431",
+    "name": "Drought is on going in Madagascar",
+    "country": "Madagascar",
+    "slug": "drought-is-on-going-in-madagascar",
+    "peopleAffected": 200000,
+    "fundingGapUSD": 42000000,
+    "fundingReceivedUSD": 18000000,
+    "urgencyScore": 55,
+    "lastUpdated": "2026-04-30",
+    "criticalNeeds": [
+      "Water",
+      "Food",
+      "Livestock feed",
+      "Medical supplies"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
   }
 ]
