@@ -331,9 +331,9 @@
   },
   {
     "id": "gdacs-WF-1030240",
-    "name": "Green forest fire notification in Canada",
+    "name": "Orange forest fire notification in Canada",
     "country": "Canada",
-    "slug": "green-forest-fire-notification-in-canada",
+    "slug": "orange-forest-fire-notification-in-canada",
     "peopleAffected": 200000,
     "fundingGapUSD": 42000000,
     "fundingReceivedUSD": 18000000,
