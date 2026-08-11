@@ -330,19 +330,19 @@
     "source": "GDACS (Orange alert)"
   },
   {
-    "id": "gdacs-WF-1030240",
-    "name": "Orange forest fire notification in Canada",
-    "country": "Canada",
-    "slug": "orange-forest-fire-notification-in-canada",
+    "id": "gdacs-FL-1104081",
+    "name": "Green flood alert in China",
+    "country": "China",
+    "slug": "green-flood-alert-in-china",
     "peopleAffected": 200000,
     "fundingGapUSD": 42000000,
     "fundingReceivedUSD": 18000000,
     "urgencyScore": 55,
-    "lastUpdated": "2026-08-08",
+    "lastUpdated": "2026-08-07",
     "criticalNeeds": [
-      "Evacuation support",
-      "Shelter",
+      "Water purification",
       "Medical supplies",
+      "Shelter",
       "Food"
     ],
     "organizations": [
