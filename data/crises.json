@@ -237,20 +237,19 @@
   },
   {
     "id": "gdacs-WF-1030534",
-    "name": "tcase forest fire notification in Belgium",
+    "name": "Orange forest fire notification in Belgium",
     "country": "Belgium",
-    "slug": "tcase-forest-fire-notification-in-belgium",
+    "slug": "orange-forest-fire-notification-in-belgium",
     "peopleAffected": 200000,
     "fundingGapUSD": 42000000,
     "fundingReceivedUSD": 18000000,
     "urgencyScore": 55,
     "lastUpdated": "2026-08-16",
     "criticalNeeds": [
+      "Evacuation support",
       "Shelter",
-      "Water",
-      "Food",
       "Medical supplies",
-      "Generators"
+      "Food"
     ],
     "organizations": [
       {
