@@ -236,6 +236,52 @@
     ]
   },
   {
+    "id": "gdacs-FL-1104124",
+    "name": "Orange flood alert in Nepal",
+    "country": "Nepal",
+    "slug": "orange-flood-alert-in-nepal",
+    "peopleAffected": 1000000,
+    "fundingGapUSD": 240000000,
+    "fundingReceivedUSD": 60000000,
+    "urgencyScore": 76,
+    "lastUpdated": "2026-09-01",
+    "criticalNeeds": [
+      "Water purification",
+      "Medical supplies",
+      "Shelter",
+      "Food"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Red alert)"
+  },
+  {
     "id": "gdacs-EQ-1562260",
     "name": "Orange earthquake  in China 28/08/2026 05:13 UTC",
     "country": "China",
@@ -298,52 +344,6 @@
       "Food",
       "Medical supplies",
       "Generators"
-    ],
-    "organizations": [
-      {
-        "slug": "ifrc",
-        "name": "Red Cross / Red Crescent",
-        "donationUrl": "https://www.ifrc.org/donate",
-        "volunteerUrl": "https://www.ifrc.org/get-involved"
-      },
-      {
-        "slug": "msf",
-        "name": "Doctors Without Borders",
-        "donationUrl": "https://www.msf.org/donate",
-        "volunteerUrl": "https://www.msf.org/work-with-us"
-      }
-    ],
-    "resources": [
-      {
-        "title": "How to help disaster survivors",
-        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
-        "source": "IRC",
-        "type": "guide"
-      },
-      {
-        "title": "GDACS event information",
-        "url": "https://www.gdacs.org/",
-        "source": "GDACS",
-        "type": "report"
-      }
-    ],
-    "source": "GDACS (Orange alert)"
-  },
-  {
-    "id": "gdacs-FL-1104124",
-    "name": "Orange flood alert in Nepal",
-    "country": "Nepal",
-    "slug": "orange-flood-alert-in-nepal",
-    "peopleAffected": 200000,
-    "fundingGapUSD": 42000000,
-    "fundingReceivedUSD": 18000000,
-    "urgencyScore": 55,
-    "lastUpdated": "2026-08-28",
-    "criticalNeeds": [
-      "Water purification",
-      "Medical supplies",
-      "Shelter",
-      "Food"
     ],
     "organizations": [
       {
