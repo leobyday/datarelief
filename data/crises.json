@@ -237,9 +237,9 @@
   },
   {
     "id": "gdacs-FL-1104124",
-    "name": "Orange flood alert in Nepal",
+    "name": "Red flood alert in Nepal",
     "country": "Nepal",
-    "slug": "orange-flood-alert-in-nepal",
+    "slug": "red-flood-alert-in-nepal",
     "peopleAffected": 1000000,
     "fundingGapUSD": 240000000,
     "fundingReceivedUSD": 60000000,
