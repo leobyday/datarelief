@@ -374,10 +374,10 @@
     "source": "GDACS (Orange alert)"
   },
   {
-    "id": "gdacs-DR-1027450",
-    "name": "Drought is on going in Djibouti",
-    "country": "Djibouti, Eritrea, Ethiopia, Kenya, Sudan, Somalia, South Sudan, Uganda",
-    "slug": "drought-is-on-going-in-djibouti-eritrea-ethiopia-k",
+    "id": "gdacs-DR-1027449",
+    "name": "Drought is on going in The Bahamas",
+    "country": "The Bahamas, Belize, Cuba, Dominican Republic, Guatemala, Honduras, Haiti, Mexico, Nicaragua, El Salvador",
+    "slug": "drought-is-on-going-in-the-bahamas-belize-cuba-dom",
     "peopleAffected": 200000,
     "fundingGapUSD": 42000000,
     "fundingReceivedUSD": 18000000,
@@ -420,10 +420,10 @@
     "source": "GDACS (Orange alert)"
   },
   {
-    "id": "gdacs-DR-1027449",
-    "name": "Drought is on going in The Bahamas",
-    "country": "The Bahamas, Belize, Cuba, Dominican Republic, Guatemala, Honduras, Haiti, Mexico, Nicaragua, El Salvador",
-    "slug": "drought-is-on-going-in-the-bahamas-belize-cuba-dom",
+    "id": "gdacs-DR-1027450",
+    "name": "Drought is on going in Djibouti",
+    "country": "Djibouti, Eritrea, Ethiopia, Kenya, Sudan, Somalia, South Sudan, Uganda",
+    "slug": "drought-is-on-going-in-djibouti-eritrea-ethiopia-k",
     "peopleAffected": 200000,
     "fundingGapUSD": 42000000,
     "fundingReceivedUSD": 18000000,
