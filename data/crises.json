@@ -237,13 +237,13 @@
   },
   {
     "id": "gdacs-TC-1001325",
-    "name": "Orange notification for tropical cyclone POLO-26. Population affected by Categor",
+    "name": "Red notification for tropical cyclone POLO-26. Population affected by Category 1",
     "country": "Mexico",
-    "slug": "orange-notification-for-tropical-cyclone-polo-26-p",
+    "slug": "red-notification-for-tropical-cyclone-polo-26-popu",
     "peopleAffected": 2000000,
-    "fundingGapUSD": 420000000,
-    "fundingReceivedUSD": 180000000,
-    "urgencyScore": 60,
+    "fundingGapUSD": 480000000,
+    "fundingReceivedUSD": 120000000,
+    "urgencyScore": 81,
     "lastUpdated": "2026-09-21",
     "criticalNeeds": [
       "Shelter",
@@ -280,7 +280,7 @@
         "type": "report"
       }
     ],
-    "source": "GDACS (Orange alert)"
+    "source": "GDACS (Red alert)"
   },
   {
     "id": "gdacs-FL-1104121",
