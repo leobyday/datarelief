@@ -334,9 +334,9 @@
     "name": "Orange notification for tropical cyclone SIMON-26. Population affected by Catego",
     "country": "Mexico",
     "slug": "orange-notification-for-tropical-cyclone-simon-26-",
-    "peopleAffected": 200000,
-    "fundingGapUSD": 42000000,
-    "fundingReceivedUSD": 18000000,
+    "peopleAffected": 2000000,
+    "fundingGapUSD": 420000000,
+    "fundingReceivedUSD": 180000000,
     "urgencyScore": 60,
     "lastUpdated": "2026-10-07",
     "criticalNeeds": [
@@ -392,6 +392,52 @@
       "Food",
       "Medical supplies",
       "Generators"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
+  },
+  {
+    "id": "gdacs-VO-1000152",
+    "name": "Volcanic eruption is on going for Kanlaon in Philippines",
+    "country": "Philippines",
+    "slug": "volcanic-eruption-is-on-going-for-kanlaon-in-phili",
+    "peopleAffected": 200000,
+    "fundingGapUSD": 42000000,
+    "fundingReceivedUSD": 18000000,
+    "urgencyScore": 55,
+    "lastUpdated": "2026-10-12",
+    "criticalNeeds": [
+      "Evacuation support",
+      "Shelter",
+      "Respiratory masks",
+      "Food"
     ],
     "organizations": [
       {
