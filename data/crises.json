@@ -236,6 +236,53 @@
     ]
   },
   {
+    "id": "gdacs-TC-1001337",
+    "name": "Orange notification for tropical cyclone TRUDY-26. Population affected by Catego",
+    "country": "Mexico",
+    "slug": "orange-notification-for-tropical-cyclone-trudy-26-",
+    "peopleAffected": 200000,
+    "fundingGapUSD": 42000000,
+    "fundingReceivedUSD": 18000000,
+    "urgencyScore": 60,
+    "lastUpdated": "2026-10-13",
+    "criticalNeeds": [
+      "Shelter",
+      "Water",
+      "Food",
+      "Medical supplies",
+      "Generators"
+    ],
+    "organizations": [
+      {
+        "slug": "ifrc",
+        "name": "Red Cross / Red Crescent",
+        "donationUrl": "https://www.ifrc.org/donate",
+        "volunteerUrl": "https://www.ifrc.org/get-involved"
+      },
+      {
+        "slug": "msf",
+        "name": "Doctors Without Borders",
+        "donationUrl": "https://www.msf.org/donate",
+        "volunteerUrl": "https://www.msf.org/work-with-us"
+      }
+    ],
+    "resources": [
+      {
+        "title": "How to help disaster survivors",
+        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
+        "source": "IRC",
+        "type": "guide"
+      },
+      {
+        "title": "GDACS event information",
+        "url": "https://www.gdacs.org/",
+        "source": "GDACS",
+        "type": "report"
+      }
+    ],
+    "source": "GDACS (Orange alert)"
+  },
+  {
     "id": "gdacs-EQ-1570339",
     "name": "Orange earthquake  in Panama 09/10/2026 17:56 UTC",
     "country": "Panama",
