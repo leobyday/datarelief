@@ -240,9 +240,9 @@
     "name": "Orange notification for tropical cyclone CHAMPI-26. Population affected by Categ",
     "country": "Guam",
     "slug": "orange-notification-for-tropical-cyclone-champi-26",
-    "peopleAffected": 2000000,
-    "fundingGapUSD": 420000000,
-    "fundingReceivedUSD": 180000000,
+    "peopleAffected": 200000,
+    "fundingGapUSD": 42000000,
+    "fundingReceivedUSD": 18000000,
     "urgencyScore": 60,
     "lastUpdated": "2026-10-14",
     "criticalNeeds": [
