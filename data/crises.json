@@ -237,13 +237,13 @@
   },
   {
     "id": "gdacs-TC-1001338",
-    "name": "Red notification for tropical cyclone CHAMPI-26. Population affected by Category",
+    "name": "Orange notification for tropical cyclone CHAMPI-26. Population affected by Categ",
     "country": "Guam",
-    "slug": "red-notification-for-tropical-cyclone-champi-26-po",
+    "slug": "orange-notification-for-tropical-cyclone-champi-26",
     "peopleAffected": 2000000,
-    "fundingGapUSD": 480000000,
-    "fundingReceivedUSD": 120000000,
-    "urgencyScore": 81,
+    "fundingGapUSD": 420000000,
+    "fundingReceivedUSD": 180000000,
+    "urgencyScore": 60,
     "lastUpdated": "2026-10-14",
     "criticalNeeds": [
       "Shelter",
@@ -280,12 +280,12 @@
         "type": "report"
       }
     ],
-    "source": "GDACS (Red alert)"
+    "source": "GDACS (Orange alert)"
   },
   {
     "id": "gdacs-TC-1001335",
     "name": "Orange notification for tropical cyclone SIMON-26. Population affected by Catego",
-    "country": "México, Mexico",
+    "country": "México",
     "slug": "orange-notification-for-tropical-cyclone-simon-26-",
     "peopleAffected": 200000,
     "fundingGapUSD": 42000000,
