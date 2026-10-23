@@ -238,7 +238,7 @@
   {
     "id": "gdacs-TC-1001338",
     "name": "Red notification for tropical cyclone CHAMPI-26. Population affected by Category",
-    "country": "Philippines, Guam, Northern Mariana Islands, Japan, Taiwan",
+    "country": "Philippines, Guam, Northern Mariana Islands, Japan",
     "slug": "red-notification-for-tropical-cyclone-champi-26-po",
     "peopleAffected": 2000000,
     "fundingGapUSD": 480000000,
