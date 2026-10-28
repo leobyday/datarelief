@@ -376,55 +376,9 @@
     "source": "GDACS (Orange alert)"
   },
   {
-    "id": "gdacs-DR-1027465",
-    "name": "Drought is on going in Burundi",
-    "country": "Burundi, Democratic Republic of Congo, Kenya, Rwanda, Tanzania, Uganda",
-    "slug": "drought-is-on-going-in-burundi-democratic-republic",
-    "peopleAffected": 200000,
-    "fundingGapUSD": 42000000,
-    "fundingReceivedUSD": 18000000,
-    "urgencyScore": 55,
-    "lastUpdated": "2026-07-29",
-    "criticalNeeds": [
-      "Water",
-      "Food",
-      "Livestock feed",
-      "Medical supplies"
-    ],
-    "organizations": [
-      {
-        "slug": "ifrc",
-        "name": "Red Cross / Red Crescent",
-        "donationUrl": "https://www.ifrc.org/donate",
-        "volunteerUrl": "https://www.ifrc.org/get-involved"
-      },
-      {
-        "slug": "msf",
-        "name": "Doctors Without Borders",
-        "donationUrl": "https://www.msf.org/donate",
-        "volunteerUrl": "https://www.msf.org/work-with-us"
-      }
-    ],
-    "resources": [
-      {
-        "title": "How to help disaster survivors",
-        "url": "https://www.rescue.org/article/how-help-after-natural-disaster",
-        "source": "IRC",
-        "type": "guide"
-      },
-      {
-        "title": "GDACS event information",
-        "url": "https://www.gdacs.org/",
-        "source": "GDACS",
-        "type": "report"
-      }
-    ],
-    "source": "GDACS (Orange alert)"
-  },
-  {
     "id": "gdacs-DR-1027449",
     "name": "Drought is on going in The Bahamas",
-    "country": "The Bahamas, Belize, Costa Rica, Cuba, Dominican Republic, Guatemala, Honduras, Haiti, Mexico, Nicaragua, El Salvador, United States",
+    "country": "Belize, Costa Rica, Cuba, Dominican Republic, Guatemala, Honduras, Haiti, Mexico, Nicaragua, El Salvador, United States",
     "slug": "drought-is-on-going-in-the-bahamas-belize-costa-ri",
     "peopleAffected": 200000,
     "fundingGapUSD": 42000000,
@@ -470,7 +424,7 @@
   {
     "id": "gdacs-DR-1018332",
     "name": "Drought is on going in Austria",
-    "country": "Austria, Bosnia &amp; Herzegovina, Belgium, Belarus, Switzerland, Czech Republic, Germany, Denmark, Spain, France, Croatia, Hungary, Ireland, Italy, Liechtenstein, Luxembourg, Moldova, Montenegro, Netherlands, Poland, Romania, Serbia, Sweden, Slovenia, Slovakia, Ukraine,",
+    "country": "Andorra, Albania, Austria, Bosnia &amp; Herzegovina, Belgium, Bulgaria, Belarus, Switzerland, Czech Republic, Germany, Denmark, Spain, France, Croatia, Hungary, Ireland, Italy, Liechtenstein, Luxembourg, Moldova, Montenegro, Netherlands, Poland, Romania, Serbia, Sweden, Slovenia, Slovakia, Ukraine,",
     "slug": "drought-is-on-going-in-austria-bosnia-amp-herzegov",
     "peopleAffected": 200000,
     "fundingGapUSD": 42000000,
