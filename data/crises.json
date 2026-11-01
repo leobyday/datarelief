@@ -237,9 +237,9 @@
   },
   {
     "id": "gdacs-TC-1001346",
-    "name": "Red notification for tropical cyclone FOUR-26. Population affected by Category 1",
+    "name": "Red notification for tropical cyclone MURASU-26. Population affected by Category",
     "country": "India",
-    "slug": "red-notification-for-tropical-cyclone-four-26-popu",
+    "slug": "red-notification-for-tropical-cyclone-murasu-26-po",
     "peopleAffected": 2000000,
     "fundingGapUSD": 480000000,
     "fundingReceivedUSD": 120000000,
