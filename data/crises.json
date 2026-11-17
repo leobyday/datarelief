@@ -285,7 +285,7 @@
   {
     "id": "gdacs-DR-1027450",
     "name": "Drought is on going in Burundi",
-    "country": "Burundi, Democratic Republic of Congo, Central African Republic, Eritrea, Ethiopia, Kenya, Niger, Nigeria, Rwanda, Sudan, South Sudan, Chad, Tanzania, Uganda",
+    "country": "Burundi, Democratic Republic of Congo, Central African Republic, Cameroon, Eritrea, Ethiopia, Kenya, Rwanda, Sudan, South Sudan, Chad, Tanzania, Uganda",
     "slug": "drought-is-on-going-in-burundi-democratic-republic",
     "peopleAffected": 200000,
     "fundingGapUSD": 42000000,
@@ -331,7 +331,7 @@
   {
     "id": "gdacs-DR-1027449",
     "name": "Drought is on going in Belize",
-    "country": "Belize, Costa Rica, Cuba, Dominican Republic, Guatemala, Honduras, Haiti, Mexico, Nicaragua, El Salvador, United States",
+    "country": "Belize, Costa Rica, Cuba, Dominican Republic, Guatemala, Honduras, Mexico, Nicaragua, El Salvador, United States",
     "slug": "drought-is-on-going-in-belize-costa-rica-cuba-domi",
     "peopleAffected": 200000,
     "fundingGapUSD": 42000000,
@@ -376,9 +376,9 @@
   },
   {
     "id": "gdacs-DR-1018332",
-    "name": "Drought is on going in Andorra",
-    "country": "Andorra, Albania, Austria, Bosnia &amp; Herzegovina, Belgium, Bulgaria, Belarus, Switzerland, Czech Republic, Germany, Denmark, Spain, France, Croatia, Hungary, Ireland, Italy, Liechtenstein, Luxembourg, Moldova, Montenegro, Netherlands, Poland, Romania, Serbia, Sweden, Slovenia, Slovakia, Ukraine,",
-    "slug": "drought-is-on-going-in-andorra-albania-austria-bos",
+    "name": "Drought is on going in Albania",
+    "country": "Albania, Austria, Bosnia &amp; Herzegovina, Belgium, Bulgaria, Belarus, Switzerland, Czech Republic, Germany, Denmark, Spain, France, Croatia, Hungary, Ireland, Italy, Liechtenstein, Luxembourg, Montenegro, Poland, Romania, Serbia, Sweden, Slovenia, Slovakia, Ukraine,",
+    "slug": "drought-is-on-going-in-albania-austria-bosnia-amp-",
     "peopleAffected": 200000,
     "fundingGapUSD": 42000000,
     "fundingReceivedUSD": 18000000,
